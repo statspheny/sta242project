@@ -1,0 +1,9 @@
+<?php
+$db = new SQLite3('RCdata/rcdata.db')
+
+$results = $db_query('SELECT smoker count(*) FROM userprofile GROUP BY smoker');
+
+while($row = $results->fetchArray()) {
+		   var_dump($row);
+}
+?>

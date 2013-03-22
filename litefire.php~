@@ -1,0 +1,13 @@
+<html>
+<head>
+</head>
+<body>
+<?php
+
+//set path of database file
+$db = $_SERVER['DOCUMENT_root']."/../library.db";
+
+//open database file
+$handle=sqlite_open($db) or die("Could not open database");
+</body>
+</html>

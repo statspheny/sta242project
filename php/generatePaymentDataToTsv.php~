@@ -1,0 +1,5 @@
+Warning (php-indent): 
+	Indentation fails badly with mixed HTML and PHP.
+	Look for an Emacs Lisp library that supports "multiple
+	major modes" like mumamo, mmm-mode or multi-mode.
+

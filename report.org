@@ -1,0 +1,22 @@
+#+TITLE: STA 242 Final Project
+#+AUTHOR: Stephanie Chan
+
+* JavaScript
+Started with the idea to work on interactive graphics.  Then, I spoke
+with you about the project, and you gave me several possibilities for
+working with interactive graphics.  One of which was to use SVG
+annotate and to use jave script to make the interactive part.  I used
+this as an opportunity to start learning javascript, and I made a
+simple website for my sister's birthday.
+
+[[anson.ucdavis.edu/~schan/joann]]
+
+* D3
+Though looking and working with JavaScript, I decided to try using D3.
+I worked through some tutorials to create svg objects an different 
+groups.  Then, I learned that D3 will automatically generate the plots
+from the given data.  I wasn't going to need R to create plots using
+D3.  I spoke to you again about this, and you mentioned how with D3
+the data cannot be changed.
+
+[[chord.html]]
