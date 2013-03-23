@@ -135,7 +135,7 @@ svg.selectAll("text")
 	.attr("x", function(d, i) { return i*width/results.length; })
 	.attr("y", function(d) { return height - yScale(d[1])+20; })
 	.text(function(d) { return d[1];})
-	.attr("fill", "#FA8072");
+	.attr("fill", "red");
  
 
    svg.selectAll("p")

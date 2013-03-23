@@ -170,6 +170,7 @@ for (var i=0, len = results.length; i < len; i++) {
 /* 	.attr("width",20) */
 /* 	.attr("height",100); */
 
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
