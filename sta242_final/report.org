@@ -1,0 +1,88 @@
+#+TITLE: STA 242 Final Project
+#+AUTHOR: Stephanie Chan
+
+* JavaScript
+Started with the idea to work on interactive graphics.  Then, I spoke
+with you about the project, and you gave me several possibilities for
+working with interactive graphics.  One of which was to use SVG
+annotate and to use jave script to make the interactive part.  I used
+this as an opportunity to start learning javascript, and I made a
+simple website for my sister's birthday.
+
+[[http://anson.ucdavis.edu/~schan/joann]]
+
+* D3
+Though looking and working with JavaScript, I decided to try using D3.
+I worked through some tutorials to create svg objects and different
+groups.  I found some nice examples online and modified them to fit my
+ data.  I learned a bit about SVG objects and how they are called.
+
+[[http://anson.ucdavis.edu/~schan/sta242_final/chord.html]]
+
+* Data
+The data set I used came from the UCI Machine Learning Data Set.  I
+chose a data set on Restaurant and Consumer Data.  This is a set of
+data that includes information for 130 restaurants and 138 users.
+The information comes in the form of nine tables with information
+about each restaurant, user, cuisine, and ratings.
+
+[[http://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data]]
+
+* SQLite
+I had learned a bit about relational databases previously, and the
+restaurant consumer data was in the perfect format to put in a
+relational database, as it kept the userID and placeIDs for each user
+and restaurant.  I used SQLite because it was simple, and we learned
+how to use it in this class.  I wrote a script to create tables and
+schemas and import all the data.
+
+* JSON
+During office hours, you said that d3 took JSON objects as input.  I
+was hoping to find a way to move the files from SQLite database to
+JSON to javascript, but it wasn't as easy as I had thought.  In
+addition, I learned about the difference between server-side
+applications and client-side applications.  This brought me to look at
+php.
+
+* PHP
+I had wanted to learn php, because I've always preferred
+non-java-script webpages, mostly since I use the NoScript Extension
+in Firefox.  PHP was also the perfect solution to getting the data
+from SQLite to javascript.  There was a lot of parts that had to be
+completed in order to get the php to work.  Since I didn't have php
+on my computer I installed Apache, and then I created my own
+webserver from my computer.  I learned about pdo objects to connect
+with the database, and how to include HTML to php.
+
+* Completed Project
+I placed my completed project on our webserver anson.  You can find
+it at the following link.  This project draws a simple bar plot of
+counts from the SQLite database.  On the first page, you can choose
+which table.  The second page you can choose which column of the
+table.  Then it will draw a bar plot of the counts for that column.
+
+[[http://anson.ucdavis.edu/~schan/sta242_final/getTable.php]]
+
+Looking at the data, some bar plots look better than other, especially
+if there are too many bars. Here are a few better ones for your
+reference:
+
+- chefmozparking:parking\_lot
+- geoplaces:accessibility
+- userpayment:Upayment
+- userprofile:budget
+
+* Appendix
+I did create some other code as I worked through various tutorials,
+but that did not make it's way into this final project
+** getTable.php
+#+INCLUDE: getTable.php src php
+
+** getColumn.php
+#+INCLUDE: getColumn.php src php
+
+** drawBars.php
+#+INCLUDE: drawBars.php src php
+
+** maketables.sqlite
+#+INCLUDE: maketables.sqlite src sqlite

@@ -1,0 +1,102 @@
+.separator ,
+
+CREATE TABLE chefmozaccepts(
+	   placeID int,
+	   Rpayment varchar);
+
+.import chefmozaccepts.csv2 chefmozaccepts
+
+
+CREATE TABLE chefmozcuisine(
+	   placeID int,
+	   Rcuisine varchar);
+
+.import chefmozcuisine.csv2 chefmozcuisine
+
+
+CREATE TABLE chefmozhours(
+	   placeID int,
+	   hours varchar,
+	   days varchar);
+
+.import chefmozhours4.csv2 chefmozhours
+
+CREATE TABLE chefmozparking(
+	   placeID int,
+	   parking_lot varchar);
+
+.import chefmozparking.csv2 chefmozparking
+
+CREATE TABLE geoplaces(
+	   placeID int,
+	   latitude real,
+	   longitude real,
+	   the_geom_meter varchar,
+	   name varchar,
+	   address varchar,
+	   city varchar,
+	   state varchar,
+	   country varchar,
+	   fax int,
+	   zip int,
+	   alcohol varchar,
+	   smoking_area varchar,
+	   dress_code varchar,
+	   accessibility varchar,
+	   price varchar,
+	   url varchar,
+	   Rambiance varchar,
+	   franchise varchar,
+	   area varchar,
+	   other_services varchar);
+
+.import geoplaces2.csv2 geoplaces
+
+
+CREATE TABLE rating(
+	   userID int,
+	   placeID int,
+	   rating int,
+	   food_rating int,
+	   service_rating int);
+
+.import rating_final.csv2 rating
+
+
+CREATE TABLE usercuisine(
+	   userID int,
+	   Rcuisine varchar);
+
+.import usercuisine.csv2 usercuisine
+
+
+CREATE TABLE userpayment(
+	   userID int,
+	   Upayment varchar);
+
+.import userpayment.csv2 userpayment
+
+CREATE TABLE userprofile(
+	   userID int,
+	   latitude real,
+	   longitude real,
+	   smoker varchar,
+	   drink_level varchar,
+	   dress_preference varchar,
+	   ambience varchar,
+	   transport varchar,
+	   marital_status varchar,
+	   hijos varchar,
+	   birth_year int,
+	   interest varchar,
+	   personality varchar,
+	   religion varchar,
+	   activity varchar,
+	   color varchar,
+	   weight int,
+	   budget varchar,
+	   height int);
+
+.import userprofile.csv2 userprofile
+
+

@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>STA 242 Final Project</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="STA 242 Final Project"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-03-23T02:21-0700"/>
+<meta name="author" content="Stephanie Chan"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">STA 242 Final Project</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 JavaScript</a></li>
+<li><a href="#sec-2">2 D3</a></li>
+<li><a href="#sec-3">3 Data</a></li>
+<li><a href="#sec-4">4 SQLite</a></li>
+<li><a href="#sec-5">5 JSON</a></li>
+<li><a href="#sec-6">6 PHP</a></li>
+<li><a href="#sec-7">7 Completed Project</a></li>
+<li><a href="#sec-8">8 Appendix</a>
+<ul>
+<li><a href="#sec-8-1">8.1 getTable.php</a></li>
+<li><a href="#sec-8-2">8.2 getColumn.php</a></li>
+<li><a href="#sec-8-3">8.3 drawBars.php</a></li>
+<li><a href="#sec-8-4">8.4 maketables.sqlite</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> JavaScript</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Started with the idea to work on interactive graphics.  Then, I spoke
+with you about the project, and you gave me several possibilities for
+working with interactive graphics.  One of which was to use SVG
+annotate and to use jave script to make the interactive part.  I used
+this as an opportunity to start learning javascript, and I made a
+simple website for my sister's birthday.
+</p>
+<p>
+<a href="http://anson.ucdavis.edu/~schan/joann">http://anson.ucdavis.edu/~schan/joann</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> D3</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Though looking and working with JavaScript, I decided to try using D3.
+I worked through some tutorials to create svg objects and different
+groups.  I found some nice examples online and modified them to fit my
+ data.  I learned a bit about SVG objects and how they are called.
+</p>
+<p>
+<a href="http://anson.ucdavis.edu/~schan/sta242_final/chord.html">http://anson.ucdavis.edu/~schan/sta242<sub>final</sub>/chord.html</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Data</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>The data set I used came from the UCI Machine Learning Data Set.  I
+chose a data set on Restaurant and Consumer Data.  This is a set of
+data that includes information for 130 restaurants and 138 users.
+The information comes in the form of nine tables with information
+about each restaurant, user, cuisine, and ratings.
+</p>
+<p>
+<a href="http://archive.ics.uci.edu/ml/datasets/Restaurant+&amp;+consumer+data">http://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> SQLite</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>I had learned a bit about relational databases previously, and the
+restaurant consumer data was in the perfect format to put in a
+relational database, as it kept the userID and placeIDs for each user
+and restaurant.  I used SQLite because it was simple, and we learned
+how to use it in this class.  I wrote a script to create tables and
+schemas and import all the data.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> JSON</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>During office hours, you said that d3 took JSON objects as input.  I
+was hoping to find a way to move the files from SQLite database to
+JSON to javascript, but it wasn't as easy as I had thought.  In
+addition, I learned about the difference between server-side
+applications and client-side applications.  This brought me to look at
+php.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> PHP</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>I had wanted to learn php, because I've always preferred
+non-java-script webpages, mostly since I use the NoScript Extension
+in Firefox.  PHP was also the perfect solution to getting the data
+from SQLite to javascript.  There was a lot of parts that had to be
+completed in order to get the php to work.  Since I didn't have php
+on my computer I installed Apache, and then I created my own
+webserver from my computer.  I learned about pdo objects to connect
+with the database, and how to include HTML to php.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Completed Project</h2>
+<div class="outline-text-2" id="text-7">
+
+<p>I placed my completed project on our webserver anson.  You can find
+it at the following link.  This project draws a simple bar plot of
+counts from the SQLite database.  On the first page, you can choose
+which table.  The second page you can choose which column of the
+table.  Then it will draw a bar plot of the counts for that column.
+</p>
+<p>
+<a href="http://anson.ucdavis.edu/~schan/sta242_final/getTable.php">http://anson.ucdavis.edu/~schan/sta242<sub>final</sub>/getTable.php</a>
+</p>
+<p>
+Looking at the data, some bar plots look better than other, especially
+if there are too many bars. Here are a few better ones for your
+reference:
+</p>
+<ul>
+<li>chefmozparking:parking_lot
+</li>
+<li>geoplaces:accessibility
+</li>
+<li>userpayment:Upayment
+</li>
+<li>userprofile:budget
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Appendix</h2>
+<div class="outline-text-2" id="text-8">
+
+<p>I did create some other code as I worked through various tutorials,
+but that did not make it's way into this final project
+</p>
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> getTable.php</h3>
+<div class="outline-text-3" id="text-8-1">
+
+
+
+
+<pre class="src src-php"><span style="color: #ffd700;">&lt;html&gt;</span>
+<span style="color: #ffd700;">&lt;head&gt;</span> 
+<span style="color: #ffd700;">&lt;title&gt;</span> <span style="color: #ffff00;">Get</span> <span style="color: #ffff00;">Our</span> <span style="color: #ffff00;">Data</span> <span style="color: #ffff00;">Counts</span> <span style="color: #ffd700;">&lt;/title&gt;</span> 
+<span style="color: #ffd700;">&lt;/head&gt;</span>
+
+<span style="color: #ffd700;">&lt;body&gt;</span>
+
+<span style="color: #ffd700;">&lt;h</span>1<span style="color: #ffd700;">&gt;</span> <span style="color: #ffff00;">Choose</span> <span style="color: #ffff00;">a</span> <span style="color: #ffff00;">Table</span> <span style="color: #ffd700;">&lt;/h</span>1<span style="color: #ffd700;">&gt;</span>
+
+<span style="color: #ffd700;">&lt;?php</span>
+
+<span style="color: #00bfff; font-weight: bold;">try</span> {
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Open connection</span>
+    $<span style="color: #4eee94;">file_db</span> = <span style="color: #00bfff; font-weight: bold;">new</span> <span style="color: #98f5ff;">PDO</span>(<span style="color: #deb887;">'sqlite:rcdata.db'</span>);
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Set errormode to exceptions</span>
+    $<span style="color: #4eee94;">file_db</span>-<span style="color: #ffd700;">&gt;</span><span style="color: #eeeeee; background-color: #102e4e;">setAttribute</span>(<span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ATTR_ERRMODE,</span> 
+                           <span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ERRMODE_EXCEPTION)</span>;
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Get all the tables</span>
+    $<span style="color: #4eee94;">result</span> = $<span style="color: #4eee94;">file_db</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">query</span>(<span style="color: #deb887;">'SELECT tbl_name FROM sqlite_master;'</span>);
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;form action="getColumn.php" method="post"&gt;'</span>. <span style="color: #deb887;">"\n"</span> ;
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;select name="table"&gt;'</span>.<span style="color: #deb887;">"\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">foreach</span>($<span style="color: #4eee94;">result</span> <span style="color: #00bfff; font-weight: bold;">as</span> $<span style="color: #4eee94;">row</span>) {
+        <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;option val="</span>.$<span style="color: #4eee94;">row</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>].<span style="color: #deb887;">"&gt;"</span> . $<span style="color: #4eee94;">row</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>] . <span style="color: #deb887;">"&lt;/option&gt; \n"</span>;
+    }
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;/select&gt;\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">' &lt;p&gt;&lt;input type="submit" /&gt;&lt;/p&gt;'</span>.<span style="color: #deb887;">"\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;/form&gt;'</span>.<span style="color: #deb887;">"\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #ffd700;">_SERVER</span>[<span style="color: #deb887;">'HTTP_USER_AGENT'</span>];
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Close file db connection</span>
+    $<span style="color: #4eee94;">file_db</span> = <span style="color: #ffd700;">null</span>;
+
+  }
+  <span style="color: #00bfff; font-weight: bold;">catch</span>(<span style="color: #98f5ff;">PDOException</span> $<span style="color: #4eee94;">e</span>) {
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Print PDOException message</span>
+    <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">e</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">getMessage</span>();
+  }
+
+<span style="color: #ffd700;">?&gt;</span>
+
+
+
+<span style="color: #ffd700;">&lt;/body&gt;</span>
+<span style="color: #ffd700;">&lt;/html&gt;</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> getColumn.php</h3>
+<div class="outline-text-3" id="text-8-2">
+
+
+
+
+<pre class="src src-php"><span style="color: #ffd700;">&lt;html&gt;</span>
+<span style="color: #ffd700;">&lt;head&gt;</span> 
+<span style="color: #ffd700;">&lt;title&gt;</span> <span style="color: #ffff00;">Get</span> <span style="color: #ffff00;">Our</span> <span style="color: #ffff00;">Data</span> <span style="color: #ffff00;">Counts</span> <span style="color: #ffd700;">&lt;/title&gt;</span> 
+<span style="color: #ffd700;">&lt;/head&gt;</span>
+
+<span style="color: #ffd700;">&lt;body&gt;</span>
+
+<span style="color: #ffd700;">&lt;h</span>3<span style="color: #ffd700;">&gt;</span><span style="color: #ffff00;">You</span> <span style="color: #ffff00;">chose</span> <span style="color: #ffff00;">table</span> <span style="color: #ffd700;">&lt;?php</span> <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #eeeeee; background-color: #102e4e;">htmlspecialchars(</span>$<span style="color: #ffd700;">_POST</span>[<span style="color: #deb887;">'table'</span>]); <span style="color: #ffd700;">?&gt;</span><span style="color: #ffd700;">&lt;/h</span>3<span style="color: #ffd700;">&gt;</span>
+<span style="color: #ffd700;">&lt;h</span>1<span style="color: #ffd700;">&gt;</span> <span style="color: #ffff00;">Choose</span> <span style="color: #ffff00;">a</span> <span style="color: #ffff00;">Column</span> <span style="color: #ffd700;">&lt;/h</span>1<span style="color: #ffd700;">&gt;</span>
+
+<span style="color: #ffd700;">&lt;br&gt;</span>
+
+<span style="color: #ffd700;">&lt;?php</span>
+$<span style="color: #4eee94;">tblname</span> = $<span style="color: #ffd700;">_POST</span>[<span style="color: #deb887;">'table'</span>];
+<span style="color: #00bfff; font-weight: bold;">try</span> {
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Open connection</span>
+    $<span style="color: #4eee94;">file_db</span> = <span style="color: #00bfff; font-weight: bold;">new</span> <span style="color: #98f5ff;">PDO</span>(<span style="color: #deb887;">'sqlite:rcdata.db'</span>);
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Set errormode to exceptions</span>
+    $<span style="color: #4eee94;">file_db</span>-<span style="color: #ffd700;">&gt;</span><span style="color: #eeeeee; background-color: #102e4e;">setAttribute</span>(<span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ATTR_ERRMODE,</span> 
+                           <span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ERRMODE_EXCEPTION)</span>;
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Get all the columns</span>
+    $<span style="color: #4eee94;">tablecols</span> = <span style="color: #eeeeee; background-color: #102e4e;">array_reduce(</span>$<span style="color: #4eee94;">file_db</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">query</span>(<span style="color: #deb887;">"PRAGMA table_info(`$tblname`)"</span>)-&gt;<span style="color: #eeeeee; background-color: #102e4e;">fetchAll</span>(),
+                              <span style="color: #eeeeee; background-color: #102e4e;">function(</span>$<span style="color: #4eee94;">rV</span>,$<span style="color: #4eee94;">cV</span>) {
+                                  $<span style="color: #4eee94;">rV</span>[]=$<span style="color: #4eee94;">cV</span>[<span style="color: #deb887;">'name'</span>]; 
+                                  <span style="color: #00bfff; font-weight: bold;">return</span> $<span style="color: #4eee94;">rV</span>;
+                              },<span style="color: #eeeeee; background-color: #102e4e;">array(</span>));
+
+    $<span style="color: #4eee94;">results</span> = $<span style="color: #4eee94;">file_db</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">query</span>(<span style="color: #deb887;">"PRAGMA table_info(`$tblname`)"</span>);
+
+    <span style="color: #5f9ea0; font-style: italic;">//</span><span style="color: #5f9ea0; font-style: italic;">echo json_encode($tablecols);</span>
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;form action="drawBars.php" method="post"&gt;'</span>. <span style="color: #deb887;">"\n"</span> ;
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;select name=\"column\"&gt;\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">foreach</span>($<span style="color: #4eee94;">results</span> <span style="color: #00bfff; font-weight: bold;">as</span> $<span style="color: #4eee94;">row</span>) {
+        <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;option val="</span>.$<span style="color: #4eee94;">row</span>[<span style="color: #deb887;">'name'</span>].<span style="color: #deb887;">"&gt;"</span> . $<span style="color: #4eee94;">row</span>[<span style="color: #deb887;">'name'</span>] . <span style="color: #deb887;">"&lt;/option&gt; \n"</span>;
+    }
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;/select&gt;\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">tblname</span>;
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;input type="hidden" name="table" value='</span>. $<span style="color: #4eee94;">tblname</span> . <span style="color: #deb887;">" /&gt;\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">' &lt;p&gt;&lt;input type="submit" /&gt;&lt;/p&gt;'</span>.<span style="color: #deb887;">"\n"</span>;
+
+    <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">'&lt;/form&gt;'</span>.<span style="color: #deb887;">"\n"</span>;
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Close file db connection</span>
+    $<span style="color: #4eee94;">file_db</span> = <span style="color: #ffd700;">null</span>;
+
+  }
+  <span style="color: #00bfff; font-weight: bold;">catch</span>(<span style="color: #98f5ff;">PDOException</span> $<span style="color: #4eee94;">e</span>) {
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Print PDOException message</span>
+    <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">e</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">getMessage</span>();
+  }
+
+<span style="color: #ffd700;">?&gt;</span>
+
+
+
+<span style="color: #ffd700;">&lt;/body&gt;</span>
+<span style="color: #ffd700;">&lt;/html&gt;</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> drawBars.php</h3>
+<div class="outline-text-3" id="text-8-3">
+
+
+
+
+<pre class="src src-php"><span style="color: #ffd700;">&lt;html&gt;</span>
+<span style="color: #ffd700;">&lt;head&gt;</span>
+<span style="color: #ffd700;">&lt;title&gt;</span> <span style="color: #ffff00;">Show</span> <span style="color: #ffff00;">Plots</span> <span style="color: #ffd700;">&lt;/title&gt;</span>
+<span style="color: #ffd700;">&lt;meta</span> <span style="color: #ffd700;">charset=</span><span style="color: #deb887;">"utf-8"</span><span style="color: #ffd700;">&gt;</span>
+<span style="color: #ffd700;">&lt;style&gt;</span>
+<span style="color: #ffff00;">body</span> {
+  <span style="color: #ffff00;">font</span>-<span style="color: #ffff00;">family</span>: <span style="color: #deb887;">"Helvetica Neue"</span>, <span style="color: #ffff00;">Helvetica</span>, <span style="color: #ffff00;">Arial</span>, <span style="color: #ffff00;">sans</span>-<span style="color: #ffff00;">serif</span>;
+  <span style="color: #ffff00;">position</span>: <span style="color: #ffff00;">relative</span>;
+  <span style="color: #ffff00;">width</span>: <span style="color: #eeeeee; background-color: #102e4e;">960</span>px;
+}
+
+.<span style="color: #ffff00;">axis</span> <span style="color: #ffff00;">text</span> {
+  <span style="color: #ffff00;">font</span>: <span style="color: #eeeeee; background-color: #102e4e;">10</span>px <span style="color: #ffff00;">sans</span>-<span style="color: #ffff00;">serif</span>;
+}
+
+.<span style="color: #ffff00;">axis</span> <span style="color: #ffff00;">path</span>,
+.<span style="color: #ffff00;">axis</span> <span style="color: #ffff00;">line</span> {
+  <span style="color: #ffff00;">fill</span>: <span style="color: #ffff00;">none</span>;
+  <span style="color: #ffff00;">stroke</span>: #<span style="color: #eeeeee; background-color: #102e4e;">000</span>;
+  <span style="color: #ffff00;">shape</span>-<span style="color: #ffff00;">rendering</span>: <span style="color: #ffff00;">crispEdges</span>;
+}
+
+.<span style="color: #ffff00;">bar</span> {
+  <span style="color: #ffff00;">fill</span>: <span style="color: #ffff00;">steelblue</span>;
+  <span style="color: #ffff00;">fill</span>-<span style="color: #ffff00;">opacity</span>: .<span style="color: #eeeeee; background-color: #102e4e;">9</span>;
+}
+
+.<span style="color: #ffff00;">x</span>.<span style="color: #ffff00;">axis</span> <span style="color: #ffff00;">path</span> {
+  <span style="color: #ffff00;">display</span>: <span style="color: #ffff00;">none</span>;
+}
+
+<span style="color: #ffff00;">label</span> {
+  <span style="color: #ffff00;">position</span>: <span style="color: #ffff00;">absolute</span>;
+  <span style="color: #ffff00;">right</span>: <span style="color: #eeeeee; background-color: #102e4e;">10</span>px;
+<span style="color: #ffd700;">&lt;/style&gt;</span>
+
+<span style="color: #ffd700;">&lt;script</span> <span style="color: #ffd700;">src=</span><span style="color: #deb887;">"http://d3js.org/d3.v3.min.js"</span><span style="color: #ffd700;">&gt;&lt;/script&gt;</span>
+
+<span style="color: #ffd700;">&lt;/head&gt;</span>
+
+<span style="color: #ffd700;">&lt;body&gt;</span>
+
+<span style="color: #ffd700;">&lt;?php</span>
+
+      $<span style="color: #4eee94;">tablename</span> = $<span style="color: #ffd700;">_POST</span>[<span style="color: #deb887;">'table'</span>];
+      $<span style="color: #4eee94;">columnname</span> = $<span style="color: #ffd700;">_POST</span>[<span style="color: #deb887;">'column'</span>];
+
+      <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;h1&gt;"</span> . $<span style="color: #4eee94;">tablename</span> . <span style="color: #deb887;">":"</span> . $<span style="color: #4eee94;">columnname</span> . <span style="color: #deb887;">"&lt;/h1&gt;"</span>;
+
+
+
+
+<span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Set default timezone</span>
+  <span style="color: #00bfff; font-weight: bold;">try</span> {
+      <span style="color: #5f9ea0; font-style: italic;">/**************************************</span>
+<span style="color: #5f9ea0; font-style: italic;">       * Create databases and                *</span>
+<span style="color: #5f9ea0; font-style: italic;">       * open connections                    *</span>
+<span style="color: #5f9ea0; font-style: italic;">       *************************************</span><span style="color: #5f9ea0; font-style: italic;">*/</span>
+
+      <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Create (connect to) SQLite database in file</span>
+      $<span style="color: #4eee94;">file_db</span> = <span style="color: #00bfff; font-weight: bold;">new</span> <span style="color: #98f5ff;">PDO</span>(<span style="color: #deb887;">'sqlite:rcdata.db'</span>);
+      <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Set errormode to exceptions</span>
+      $<span style="color: #4eee94;">file_db</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">setAttribute</span>(<span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ATTR_ERRMODE,</span> 
+                             <span style="color: #98f5ff;">PDO</span>::<span style="color: #eeeeee; background-color: #102e4e;">ERRMODE_EXCEPTION)</span>;
+
+
+    $<span style="color: #4eee94;">result</span> = $<span style="color: #4eee94;">file_db</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">query</span>(<span style="color: #deb887;">"SELECT `$columnname`, count(*) FROM `$tablename` GROUP BY `$columnname`"</span>); 
+
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Close file db connection</span>
+      $<span style="color: #4eee94;">file_db</span> = <span style="color: #ffd700;">null</span>;
+
+      <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #deb887;">"&lt;h2&gt;List of Values &lt;/h2&gt;"</span>;
+      <span style="color: #00bfff; font-weight: bold;">foreach</span>($<span style="color: #4eee94;">result</span> <span style="color: #00bfff; font-weight: bold;">as</span> $<span style="color: #4eee94;">row</span>) {
+
+          $<span style="color: #4eee94;">newrow</span> = $<span style="color: #4eee94;">row</span>;
+          <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">row</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>] . <span style="color: #deb887;">" "</span> . $<span style="color: #4eee94;">row</span>[<span style="color: #eeeeee; background-color: #102e4e;">1</span>] .<span style="color: #deb887;">"&lt;br&gt;"</span>;
+          $<span style="color: #4eee94;">counts</span>[] = $<span style="color: #4eee94;">row</span>[<span style="color: #eeeeee; background-color: #102e4e;">1</span>];
+          $<span style="color: #4eee94;">dataObject</span>[] = $<span style="color: #4eee94;">newrow</span>;
+      } 
+
+      $<span style="color: #4eee94;">maxcounts</span> = <span style="color: #eeeeee; background-color: #102e4e;">max(</span>$<span style="color: #4eee94;">counts</span>);
+
+      <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">echo json_encode($dataObject);</span>
+
+      <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">echo "end of php";</span>
+
+
+  }
+  <span style="color: #00bfff; font-weight: bold;">catch</span>(<span style="color: #98f5ff;">PDOException</span> $<span style="color: #4eee94;">e</span>) {
+    <span style="color: #5f9ea0; font-style: italic;">// </span><span style="color: #5f9ea0; font-style: italic;">Print PDOException message</span>
+    <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">e</span>-&gt;<span style="color: #eeeeee; background-color: #102e4e;">getMessage</span>();
+  }
+<span style="color: #ffd700;">?&gt;</span>
+
+<span style="color: #ffd700;">&lt;script&gt;</span>
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">results</span> = <span style="color: #ffd700;">&lt;?php</span> <span style="color: #00bfff; font-weight: bold;">echo</span> <span style="color: #eeeeee; background-color: #102e4e;">json_encode(</span>$<span style="color: #4eee94;">dataObject</span>); <span style="color: #ffd700;">?&gt;</span>;
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">margin</span> = {<span style="color: #ffff00;">top</span>: <span style="color: #eeeeee; background-color: #102e4e;">20</span>, <span style="color: #ffff00;">right</span>: <span style="color: #eeeeee; background-color: #102e4e;">20</span>, <span style="color: #ffff00;">bottom</span>: <span style="color: #eeeeee; background-color: #102e4e;">30</span>, <span style="color: #ffff00;">left</span>: <span style="color: #eeeeee; background-color: #102e4e;">40</span>},
+    <span style="color: #ffff00;">width</span> = <span style="color: #eeeeee; background-color: #102e4e;">960</span> - <span style="color: #ffff00;">margin</span>.<span style="color: #ffff00;">left</span> - <span style="color: #ffff00;">margin</span>.<span style="color: #ffff00;">right</span>,
+    <span style="color: #ffff00;">height</span> = <span style="color: #eeeeee; background-color: #102e4e;">500</span> - <span style="color: #ffff00;">margin</span>.<span style="color: #ffff00;">top</span> - <span style="color: #ffff00;">margin</span>.<span style="color: #ffff00;">bottom</span>;
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">barPadding</span> = <span style="color: #eeeeee; background-color: #102e4e;">10</span>;
+
+<span style="color: #00bfff; font-weight: bold;">if</span>(<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span>&gt;<span style="color: #eeeeee; background-color: #102e4e;">60</span>) {
+    <span style="color: #ffff00;">barPadding</span> = <span style="color: #eeeeee; background-color: #102e4e;">0</span>;
+}
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">svg</span> = <span style="color: #ffff00;">d3</span>.<span style="color: #eeeeee; background-color: #102e4e;">select(</span><span style="color: #deb887;">"body"</span>).<span style="color: #eeeeee; background-color: #102e4e;">append(</span><span style="color: #deb887;">"svg"</span>);
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">xScale</span> = <span style="color: #ffff00;">d3</span>.<span style="color: #ffff00;">scale</span>.<span style="color: #eeeeee; background-color: #102e4e;">linear(</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">domain(</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>,<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span>])
+    .<span style="color: #eeeeee; background-color: #102e4e;">range(</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>,<span style="color: #ffff00;">width</span>]);
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">maxy</span> = <span style="color: #ffd700;">&lt;?php</span> <span style="color: #00bfff; font-weight: bold;">echo</span> $<span style="color: #4eee94;">maxcounts</span>; <span style="color: #ffd700;">?&gt;</span>;
+
+<span style="color: #00bfff; font-weight: bold;">var</span> <span style="color: #ffff00;">yScale</span> = <span style="color: #ffff00;">d3</span>.<span style="color: #ffff00;">scale</span>.<span style="color: #eeeeee; background-color: #102e4e;">linear(</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">domain(</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>,<span style="color: #ffff00;">maxy</span>])
+    .<span style="color: #eeeeee; background-color: #102e4e;">range(</span>[<span style="color: #eeeeee; background-color: #102e4e;">0</span>,<span style="color: #ffff00;">height</span>]);
+
+   <span style="color: #ffff00;">svg</span>.<span style="color: #eeeeee; background-color: #102e4e;">selectAll(</span><span style="color: #deb887;">"rect"</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">data(</span><span style="color: #ffff00;">results</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">enter(</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">append(</span><span style="color: #deb887;">"rect"</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"x"</span>,<span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>,<span style="color: #ffff00;">i</span>) {  <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #ffff00;">i</span>*<span style="color: #ffff00;">width</span>/<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span>; })
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"width"</span>,<span style="color: #ffff00;">width</span>/<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span> - <span style="color: #ffff00;">barPadding</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"height"</span>, <span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>) { <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #eeeeee; background-color: #102e4e;">yScale(d[1</span>]); })
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"fill"</span>,<span style="color: #deb887;">"indigo"</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"y"</span>,<span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>) {  <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #ffff00;">height</span>-<span style="color: #eeeeee; background-color: #102e4e;">yScale(d[1</span>]); });
+
+<span style="color: #ffff00;">svg</span>.<span style="color: #eeeeee; background-color: #102e4e;">selectAll(</span><span style="color: #deb887;">"text"</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">data(</span><span style="color: #ffff00;">results</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">enter(</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">append(</span><span style="color: #deb887;">"svg:text"</span>)
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"x"</span>, <span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>, <span style="color: #ffff00;">i</span>) { <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #ffff00;">i</span>*<span style="color: #ffff00;">width</span>/<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span>; })
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"y"</span>, <span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>) { <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #ffff00;">height</span> - <span style="color: #eeeeee; background-color: #102e4e;">yScale(d[1</span>])+<span style="color: #eeeeee; background-color: #102e4e;">20</span>; })
+    .<span style="color: #eeeeee; background-color: #102e4e;">text(function(</span><span style="color: #ffff00;">d</span>) { <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #eeeeee; background-color: #102e4e;">d[1</span>];})
+    .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"fill"</span>, <span style="color: #deb887;">"red"</span>);
+
+
+   <span style="color: #ffff00;">svg</span>.<span style="color: #eeeeee; background-color: #102e4e;">selectAll(</span><span style="color: #deb887;">"p"</span>)
+       .<span style="color: #eeeeee; background-color: #102e4e;">data(</span><span style="color: #ffff00;">results</span>)
+       .<span style="color: #eeeeee; background-color: #102e4e;">enter(</span>)
+       .<span style="color: #eeeeee; background-color: #102e4e;">append(</span><span style="color: #deb887;">"text"</span>)
+       .<span style="color: #eeeeee; background-color: #102e4e;">text(function(</span><span style="color: #ffff00;">d</span>) {<span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #eeeeee; background-color: #102e4e;">d[0</span>]; })
+       .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"x"</span>, <span style="color: #eeeeee; background-color: #102e4e;">function(</span><span style="color: #ffff00;">d</span>,<span style="color: #ffff00;">i</span>) { <span style="color: #00bfff; font-weight: bold;">return</span> <span style="color: #ffff00;">i</span>*(<span style="color: #ffff00;">width</span>/<span style="color: #ffff00;">results</span>.<span style="color: #ffff00;">length</span>); })
+       .<span style="color: #eeeeee; background-color: #102e4e;">attr(</span><span style="color: #deb887;">"y"</span>, <span style="color: #ffff00;">height</span>+<span style="color: #eeeeee; background-color: #102e4e;">20</span>);
+
+
+<span style="color: #ffd700;">&lt;/script&gt;</span>
+
+
+
+
+
+<span style="color: #ffd700;">&lt;/body&gt;</span>
+<span style="color: #ffd700;">&lt;/html&gt;</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-4" class="outline-3">
+<h3 id="sec-8-4"><span class="section-number-3">8.4</span> maketables.sqlite</h3>
+<div class="outline-text-3" id="text-8-4">
+
+
+
+
+<pre class="src src-sqlite">.separator ,
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">chefmozaccepts</span>(
+       placeID <span style="color: #98f5ff;">int</span>,
+       Rpayment <span style="color: #98f5ff;">varchar</span>);
+
+.import chefmozaccepts.csv2 chefmozaccepts
+
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">chefmozcuisine</span>(
+       placeID <span style="color: #98f5ff;">int</span>,
+       Rcuisine <span style="color: #98f5ff;">varchar</span>);
+
+.import chefmozcuisine.csv2 chefmozcuisine
+
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">chefmozhours</span>(
+       placeID <span style="color: #98f5ff;">int</span>,
+       hours <span style="color: #98f5ff;">varchar</span>,
+       days <span style="color: #98f5ff;">varchar</span>);
+
+.import chefmozhours4.csv2 chefmozhours
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">chefmozparking</span>(
+       placeID <span style="color: #98f5ff;">int</span>,
+       parking_lot <span style="color: #98f5ff;">varchar</span>);
+
+.import chefmozparking.csv2 chefmozparking
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">geoplaces</span>(
+       placeID <span style="color: #98f5ff;">int</span>,
+       latitude <span style="color: #98f5ff;">real</span>,
+       longitude <span style="color: #98f5ff;">real</span>,
+       the_geom_meter <span style="color: #98f5ff;">varchar</span>,
+       <span style="color: #00bfff; font-weight: bold;">name</span> <span style="color: #98f5ff;">varchar</span>,
+       address <span style="color: #98f5ff;">varchar</span>,
+       city <span style="color: #98f5ff;">varchar</span>,
+       <span style="color: #00bfff; font-weight: bold;">state</span> <span style="color: #98f5ff;">varchar</span>,
+       country <span style="color: #98f5ff;">varchar</span>,
+       fax <span style="color: #98f5ff;">int</span>,
+       zip <span style="color: #98f5ff;">int</span>,
+       alcohol <span style="color: #98f5ff;">varchar</span>,
+       smoking_area <span style="color: #98f5ff;">varchar</span>,
+       dress_code <span style="color: #98f5ff;">varchar</span>,
+       accessibility <span style="color: #98f5ff;">varchar</span>,
+       price <span style="color: #98f5ff;">varchar</span>,
+       url <span style="color: #98f5ff;">varchar</span>,
+       Rambiance <span style="color: #98f5ff;">varchar</span>,
+       franchise <span style="color: #98f5ff;">varchar</span>,
+       area <span style="color: #98f5ff;">varchar</span>,
+       other_services <span style="color: #98f5ff;">varchar</span>);
+
+.import geoplaces2.csv2 geoplaces
+
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">rating</span>(
+       userID <span style="color: #98f5ff;">int</span>,
+       placeID <span style="color: #98f5ff;">int</span>,
+       rating <span style="color: #98f5ff;">int</span>,
+       food_rating <span style="color: #98f5ff;">int</span>,
+       service_rating <span style="color: #98f5ff;">int</span>);
+
+.import rating_final.csv2 rating
+
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">usercuisine</span>(
+       userID <span style="color: #98f5ff;">int</span>,
+       Rcuisine <span style="color: #98f5ff;">varchar</span>);
+
+.import usercuisine.csv2 usercuisine
+
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">userpayment</span>(
+       userID <span style="color: #98f5ff;">int</span>,
+       Upayment <span style="color: #98f5ff;">varchar</span>);
+
+.import userpayment.csv2 userpayment
+
+<span style="color: #00bfff; font-weight: bold;">CREATE</span> <span style="color: #00bfff; font-weight: bold;">TABLE</span> <span style="color: #daa520; font-weight: bold;">userprofile</span>(
+       userID <span style="color: #98f5ff;">int</span>,
+       latitude <span style="color: #98f5ff;">real</span>,
+       longitude <span style="color: #98f5ff;">real</span>,
+       smoker <span style="color: #98f5ff;">varchar</span>,
+       drink_level <span style="color: #98f5ff;">varchar</span>,
+       dress_preference <span style="color: #98f5ff;">varchar</span>,
+       ambience <span style="color: #98f5ff;">varchar</span>,
+       transport <span style="color: #98f5ff;">varchar</span>,
+       marital_status <span style="color: #98f5ff;">varchar</span>,
+       hijos <span style="color: #98f5ff;">varchar</span>,
+       birth_year <span style="color: #98f5ff;">int</span>,
+       interest <span style="color: #98f5ff;">varchar</span>,
+       personality <span style="color: #98f5ff;">varchar</span>,
+       religion <span style="color: #98f5ff;">varchar</span>,
+       activity <span style="color: #98f5ff;">varchar</span>,
+       color <span style="color: #98f5ff;">varchar</span>,
+       weight <span style="color: #98f5ff;">int</span>,
+       budget <span style="color: #98f5ff;">varchar</span>,
+       height <span style="color: #98f5ff;">int</span>);
+
+.import userprofile.csv2 userprofile
+
+
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-03-23T02:21-0700</p>
+<p class="author">Author: Stephanie Chan</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3e with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
